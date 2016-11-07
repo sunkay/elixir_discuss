@@ -17,14 +17,15 @@ defmodule Discuss.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", TopicController, :index
-    get "/topics/new", TopicController, :new
-    post "/topics/create", TopicController, :create
-    get "/topics/:id/edit", TopicController, :edit
-    put "/topics/:id/update", TopicController, :update
-    delete "/topics/:id/delete", TopicController, :delete
-
     # resources helper will auto generate all restful handlers for us
-    #resources "/", TopicController
+    resources "/topics", TopicController
+
+    #get "/topics/new", TopicController, :new
+    #post "/topics/create", TopicController, :create
+    #get "/topics/:id/edit", TopicController, :edit
+    #put "/topics/:id/update", TopicController, :update
+    #delete "/topics/:id/delete", TopicController, :delete
+
   end
 
   # Other scopes may use custom stacks.
