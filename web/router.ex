@@ -21,6 +21,10 @@ defmodule Discuss.Router do
     post "/topics/create", TopicController, :create
     get "/topics/:id/edit", TopicController, :edit
     put "/topics/:id/update", TopicController, :update
+    delete "/topics/:id/delete", TopicController, :delete
+
+    # resources helper will auto generate all restful handlers for us
+    #resources "/", TopicController
   end
 
   # Other scopes may use custom stacks.
